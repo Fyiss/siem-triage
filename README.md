@@ -1,4 +1,4 @@
-#  siem-triage
+#  SIEM-Triage
 
 A modular Python CLI that ingests raw Linux system logs, classifies security events, suppresses duplicate noise, enriches suspicious IPs with threat intel, and produces structured JSON + Markdown reports.
 
