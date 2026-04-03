@@ -1,4 +1,4 @@
-# 🛡️ siem-triage
+#  siem-triage
 
 A modular Python CLI that ingests raw Linux system logs, classifies security events, suppresses duplicate noise, enriches suspicious IPs with threat intel, and produces structured JSON + Markdown reports.
 
@@ -22,9 +22,9 @@ $ python main.py sample_logs/demo.log
 
 [4/4] Enriching 5 unique IPs...
 
-✅ Done in 0.3s
-📄 JSON  → reports/report_20240115_080100.json
-📝 MD    → reports/report_20240115_080100.md
+ Done in 0.3s
+ JSON  → reports/report_20240115_080100.json
+ MD    → reports/report_20240115_080100.md
 ```
 
 ---
