@@ -1,0 +1,655 @@
+{
+  "generated_at": "2026-04-03T16:29:38.516681",
+  "summary": {
+    "total_alerts": 25,
+    "original_raw_lines": 34,
+    "suppressed_dupes": 9,
+    "severity_breakdown": {
+      "critical": 1,
+      "high": 5,
+      "medium": 11,
+      "low": 5,
+      "info": 3
+    },
+    "top_categories": [
+      [
+        "successful_login",
+        4
+      ],
+      [
+        "invalid_user",
+        4
+      ],
+      [
+        "auth_failure",
+        3
+      ],
+      [
+        "brute_force",
+        2
+      ],
+      [
+        "uncategorized",
+        2
+      ],
+      [
+        "ssh_scanner",
+        1
+      ],
+      [
+        "privilege_escalation",
+        1
+      ],
+      [
+        "oom",
+        1
+      ],
+      [
+        "preauth_disconnect",
+        1
+      ],
+      [
+        "service_failure",
+        1
+      ]
+    ],
+    "top_source_ips": [
+      [
+        "45.33.32.156",
+        8
+      ],
+      [
+        "192.168.1.10",
+        2
+      ],
+      [
+        "10.0.0.5",
+        2
+      ],
+      [
+        "185.220.101.50",
+        2
+      ],
+      [
+        "203.0.113.42",
+        2
+      ]
+    ]
+  },
+  "deduplication": {
+    "original_count": 34,
+    "deduplicated_count": 25,
+    "suppressed_count": 9,
+    "groups": {
+      "successful_login|sshd|192.168.1.10|deploy": [
+        "demo_000000",
+        "demo_000031"
+      ],
+      "auth_failure|sshd|45.33.32.156|root": [
+        "demo_000001",
+        "demo_000032"
+      ]
+    }
+  },
+  "enrichment": {
+    "203.0.113.42": {
+      "ip": "203.0.113.42",
+      "abuseipdb_score": null,
+      "abuseipdb_country": null,
+      "abuseipdb_isp": null,
+      "abuseipdb_total_reports": null,
+      "vt_malicious": null,
+      "vt_suspicious": null,
+      "vt_last_analysis": null,
+      "error": "api_key_missing",
+      "source": "none"
+    },
+    "185.220.101.50": {
+      "ip": "185.220.101.50",
+      "abuseipdb_score": null,
+      "abuseipdb_country": null,
+      "abuseipdb_isp": null,
+      "abuseipdb_total_reports": null,
+      "vt_malicious": null,
+      "vt_suspicious": null,
+      "vt_last_analysis": null,
+      "error": "api_key_missing",
+      "source": "none"
+    },
+    "45.33.32.156": {
+      "ip": "45.33.32.156",
+      "abuseipdb_score": null,
+      "abuseipdb_country": null,
+      "abuseipdb_isp": null,
+      "abuseipdb_total_reports": null,
+      "vt_malicious": null,
+      "vt_suspicious": null,
+      "vt_last_analysis": null,
+      "error": "api_key_missing",
+      "source": "none"
+    },
+    "10.0.0.5": {
+      "ip": "10.0.0.5",
+      "abuseipdb_score": null,
+      "abuseipdb_country": null,
+      "abuseipdb_isp": null,
+      "abuseipdb_total_reports": null,
+      "vt_malicious": null,
+      "vt_suspicious": null,
+      "vt_last_analysis": null,
+      "error": "api_key_missing",
+      "source": "none"
+    },
+    "192.168.1.10": {
+      "ip": "192.168.1.10",
+      "abuseipdb_score": null,
+      "abuseipdb_country": null,
+      "abuseipdb_isp": null,
+      "abuseipdb_total_reports": null,
+      "vt_malicious": null,
+      "vt_suspicious": null,
+      "vt_last_analysis": null,
+      "error": "api_key_missing",
+      "source": "none"
+    }
+  },
+  "alerts": [
+    {
+      "id": "demo_000000",
+      "timestamp": "2026-01-15T08:01:22",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:01:22 srv01 sshd[1023]: Accepted password for deploy from 192.168.1.10 port 52341 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1023",
+      "message": "Accepted password for deploy from 192.168.1.10 port 52341 ssh2",
+      "src_ip": "192.168.1.10",
+      "user": "deploy",
+      "category": "successful_login",
+      "severity": "low",
+      "severity_score": 15,
+      "tags": [
+        "auth",
+        "login-success"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000031",
+      "timestamp": "2026-01-15T08:12:30",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:12:30 srv01 sshd[2000]: Accepted password for deploy from 192.168.1.10 port 52400 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "2000",
+      "message": "Accepted password for deploy from 192.168.1.10 port 52400 ssh2",
+      "src_ip": "192.168.1.10",
+      "user": "deploy",
+      "category": "successful_login",
+      "severity": "low",
+      "severity_score": 15,
+      "tags": [
+        "auth",
+        "login-success"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000001",
+      "timestamp": "2026-01-15T08:01:45",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:01:45 srv01 sshd[1024]: Failed password for root from 45.33.32.156 port 43210 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1024",
+      "message": "Failed password for root from 45.33.32.156 port 43210 ssh2",
+      "src_ip": "45.33.32.156",
+      "user": "root",
+      "category": "auth_failure",
+      "severity": "medium",
+      "severity_score": 40,
+      "tags": [
+        "auth",
+        "brute-force-candidate"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000032",
+      "timestamp": "2026-01-15T08:13:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:13:00 srv01 sshd[2100]: Failed password for root from 45.33.32.156 port 43500 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "2100",
+      "message": "Failed password for root from 45.33.32.156 port 43500 ssh2",
+      "src_ip": "45.33.32.156",
+      "user": "root",
+      "category": "auth_failure",
+      "severity": "medium",
+      "severity_score": 40,
+      "tags": [
+        "auth",
+        "brute-force-candidate"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000005",
+      "timestamp": "2026-01-15T08:01:49",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:01:49 srv01 sshd[1028]: error: maximum authentication attempts exceeded for root from 45.33.32.156 port 43213 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1028",
+      "message": "error: maximum authentication attempts exceeded for root from 45.33.32.156 port 43213 ssh2",
+      "src_ip": "45.33.32.156",
+      "user": "root",
+      "category": "brute_force",
+      "severity": "high",
+      "severity_score": 75,
+      "tags": [
+        "auth",
+        "brute-force"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000006",
+      "timestamp": "2026-01-15T08:02:11",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:02:11 srv01 sshd[1030]: Invalid user admin from 45.33.32.156 port 43300",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1030",
+      "message": "Invalid user admin from 45.33.32.156 port 43300",
+      "src_ip": "45.33.32.156",
+      "user": "admin",
+      "category": "invalid_user",
+      "severity": "medium",
+      "severity_score": 45,
+      "tags": [
+        "auth",
+        "recon-candidate"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000007",
+      "timestamp": "2026-01-15T08:02:12",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:02:12 srv01 sshd[1031]: Invalid user ubuntu from 45.33.32.156 port 43301",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1031",
+      "message": "Invalid user ubuntu from 45.33.32.156 port 43301",
+      "src_ip": "45.33.32.156",
+      "user": "ubuntu",
+      "category": "invalid_user",
+      "severity": "medium",
+      "severity_score": 45,
+      "tags": [
+        "auth",
+        "recon-candidate"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000008",
+      "timestamp": "2026-01-15T08:02:13",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:02:13 srv01 sshd[1032]: Invalid user pi from 45.33.32.156 port 43302",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1032",
+      "message": "Invalid user pi from 45.33.32.156 port 43302",
+      "src_ip": "45.33.32.156",
+      "user": "pi",
+      "category": "invalid_user",
+      "severity": "medium",
+      "severity_score": 45,
+      "tags": [
+        "auth",
+        "recon-candidate"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000009",
+      "timestamp": "2026-01-15T08:02:14",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:02:14 srv01 sshd[1033]: Did not receive identification string from 45.33.32.156 port 43303",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1033",
+      "message": "Did not receive identification string from 45.33.32.156 port 43303",
+      "src_ip": "45.33.32.156",
+      "user": null,
+      "category": "ssh_scanner",
+      "severity": "medium",
+      "severity_score": 50,
+      "tags": [
+        "network",
+        "scanner",
+        "ssh"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000010",
+      "timestamp": "2026-01-15T08:03:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:03:00 srv01 sudo[1100]: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/bash",
+      "host": "srv01",
+      "process": "sudo",
+      "pid": "1100",
+      "message": "deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/bash",
+      "src_ip": null,
+      "user": null,
+      "category": "privilege_escalation",
+      "severity": "high",
+      "severity_score": 70,
+      "tags": [
+        "privesc",
+        "sudo"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000012",
+      "timestamp": "2026-01-15T08:04:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:04:00 srv01 sshd[1200]: Accepted publickey for alice from 10.0.0.5 port 55001 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1200",
+      "message": "Accepted publickey for alice from 10.0.0.5 port 55001 ssh2",
+      "src_ip": "10.0.0.5",
+      "user": "alice",
+      "category": "successful_login",
+      "severity": "low",
+      "severity_score": 15,
+      "tags": [
+        "auth",
+        "login-success"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000013",
+      "timestamp": "2026-01-15T08:04:01",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:04:01 srv01 sshd[1200]: session opened for user alice by (uid=0)",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1200",
+      "message": "session opened for user alice by (uid=0)",
+      "src_ip": null,
+      "user": "user",
+      "category": "successful_login",
+      "severity": "low",
+      "severity_score": 15,
+      "tags": [
+        "auth",
+        "login-success"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000014",
+      "timestamp": "2026-01-15T08:05:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:05:00 srv01 kernel[1]: Out of memory: Kill process 2310 (java) score 900 or sacrifice child",
+      "host": "srv01",
+      "process": "kernel",
+      "pid": "1",
+      "message": "Out of memory: Kill process 2310 (java) score 900 or sacrifice child",
+      "src_ip": null,
+      "user": null,
+      "category": "oom",
+      "severity": "high",
+      "severity_score": 70,
+      "tags": [
+        "kernel",
+        "resource"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000015",
+      "timestamp": "2026-01-15T08:05:01",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:05:01 srv01 kernel[1]: Killed process 2310 (java) total-vm:2048000kB anon-rss:1024000kB",
+      "host": "srv01",
+      "process": "kernel",
+      "pid": "1",
+      "message": "Killed process 2310 (java) total-vm:2048000kB anon-rss:1024000kB",
+      "src_ip": null,
+      "user": null,
+      "category": "uncategorized",
+      "severity": "info",
+      "severity_score": 0,
+      "tags": [],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000016",
+      "timestamp": "2026-01-15T08:05:30",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:05:30 srv01 sshd[1300]: Received disconnect from 45.33.32.156 port 43400: 11: Bye Bye [preauth]",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1300",
+      "message": "Received disconnect from 45.33.32.156 port 43400: 11: Bye Bye [preauth]",
+      "src_ip": "45.33.32.156",
+      "user": null,
+      "category": "preauth_disconnect",
+      "severity": "low",
+      "severity_score": 20,
+      "tags": [
+        "network",
+        "ssh"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000017",
+      "timestamp": "2026-01-15T08:06:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:06:00 srv01 systemd[1]: nginx.service: Main process exited code=killed status=9/KILL",
+      "host": "srv01",
+      "process": "systemd",
+      "pid": "1",
+      "message": "nginx.service: Main process exited code=killed status=9/KILL",
+      "src_ip": null,
+      "user": null,
+      "category": "uncategorized",
+      "severity": "info",
+      "severity_score": 0,
+      "tags": [],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000018",
+      "timestamp": "2026-01-15T08:06:01",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:06:01 srv01 systemd[1]: nginx.service: Failed with result signal",
+      "host": "srv01",
+      "process": "systemd",
+      "pid": "1",
+      "message": "nginx.service: Failed with result signal",
+      "src_ip": null,
+      "user": null,
+      "category": "service_failure",
+      "severity": "medium",
+      "severity_score": 45,
+      "tags": [
+        "service",
+        "availability"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000019",
+      "timestamp": "2026-01-15T08:07:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:07:00 srv01 kernel[1]: segfault at 0 ip 00007f1234567890 sp 00007fff12345678 error 4 in libc-2.35.so",
+      "host": "srv01",
+      "process": "kernel",
+      "pid": "1",
+      "message": "segfault at 0 ip 00007f1234567890 sp 00007fff12345678 error 4 in libc-2.35.so",
+      "src_ip": null,
+      "user": null,
+      "category": "segfault",
+      "severity": "medium",
+      "severity_score": 55,
+      "tags": [
+        "crash",
+        "kernel"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000020",
+      "timestamp": "2026-01-15T08:08:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:08:00 srv01 sshd[1400]: POSSIBLE BREAK-IN ATTEMPT from 185.220.101.50",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1400",
+      "message": "POSSIBLE BREAK-IN ATTEMPT from 185.220.101.50",
+      "src_ip": "185.220.101.50",
+      "user": null,
+      "category": "breakin_attempt",
+      "severity": "critical",
+      "severity_score": 95,
+      "tags": [
+        "intrusion",
+        "critical"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000021",
+      "timestamp": "2026-01-15T08:08:30",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:08:30 srv01 sshd[1401]: Failed password for invalid user test from 185.220.101.50 port 44000 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1401",
+      "message": "Failed password for invalid user test from 185.220.101.50 port 44000 ssh2",
+      "src_ip": "185.220.101.50",
+      "user": "invalid",
+      "category": "invalid_user",
+      "severity": "medium",
+      "severity_score": 45,
+      "tags": [
+        "auth",
+        "brute-force-candidate",
+        "recon-candidate"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000024",
+      "timestamp": "2026-01-15T08:09:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:09:00 srv01 su[1500]: session opened for user root by alice(uid=1001)",
+      "host": "srv01",
+      "process": "su",
+      "pid": "1500",
+      "message": "session opened for user root by alice(uid=1001)",
+      "src_ip": null,
+      "user": "user",
+      "category": "su_session",
+      "severity": "medium",
+      "severity_score": 50,
+      "tags": [
+        "auth",
+        "login-success",
+        "privesc",
+        "su"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000025",
+      "timestamp": "2026-01-15T08:09:30",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:09:30 srv01 sshd[1600]: Connection closed by 10.0.0.5 port 55001",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1600",
+      "message": "Connection closed by 10.0.0.5 port 55001",
+      "src_ip": "10.0.0.5",
+      "user": null,
+      "category": "network_disconnect",
+      "severity": "info",
+      "severity_score": 5,
+      "tags": [
+        "network"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000026",
+      "timestamp": "2026-01-15T08:10:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:10:00 srv01 sshd[1700]: Failed password for bob from 203.0.113.42 port 10022 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1700",
+      "message": "Failed password for bob from 203.0.113.42 port 10022 ssh2",
+      "src_ip": "203.0.113.42",
+      "user": "bob",
+      "category": "auth_failure",
+      "severity": "medium",
+      "severity_score": 40,
+      "tags": [
+        "auth",
+        "brute-force-candidate"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000029",
+      "timestamp": "2026-01-15T08:11:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:11:00 srv01 sshd[1800]: error: maximum authentication attempts exceeded for bob from 203.0.113.42 port 10024 ssh2",
+      "host": "srv01",
+      "process": "sshd",
+      "pid": "1800",
+      "message": "error: maximum authentication attempts exceeded for bob from 203.0.113.42 port 10024 ssh2",
+      "src_ip": "203.0.113.42",
+      "user": "bob",
+      "category": "brute_force",
+      "severity": "high",
+      "severity_score": 75,
+      "tags": [
+        "auth",
+        "brute-force"
+      ],
+      "duplicate_of": null
+    },
+    {
+      "id": "demo_000030",
+      "timestamp": "2026-01-15T08:12:00",
+      "source_file": "sample_logs/demo.log",
+      "raw": "Jan 15 08:12:00 srv01 cron[1900]: root REPLACE crontabs/root",
+      "host": "srv01",
+      "process": "cron",
+      "pid": "1900",
+      "message": "root REPLACE crontabs/root",
+      "src_ip": null,
+      "user": null,
+      "category": "persistence_indicator",
+      "severity": "high",
+      "severity_score": 80,
+      "tags": [
+        "persistence",
+        "suspicious"
+      ],
+      "duplicate_of": null
+    }
+  ]
+}
